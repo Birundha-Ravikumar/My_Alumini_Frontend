@@ -1,0 +1,35 @@
+/* Admin Panel */
+
+.signin-area-wrap{
+    font-size: 20px;
+    line-height: 1;
+    color: #131c33;
+    margin-bottom: 30px; 
+    justify-content: center;
+    align-items: center;
+  }
+  .signin-area-wrap h4{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .sign-form input {
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #ecf1f5;
+    border: 1px solid #2f4da1;
+    color: #6a78a1;
+    padding: 9pt 15px;
+    margin-bottom: 15px;
+    transition: all 0.4s ease-in-out;
+  }
+  .sign-form .btn-reg {
+    width: 100%;
+    display: block;
+    padding: 15px 20px;
+    margin-top: 20px;
+  }
+  .text-centerAdmin{
+    margin-top: 150px;
+    margin-left: 500px;
+  }

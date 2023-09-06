@@ -1,0 +1,121 @@
+.register-page-inner {
+    -webkit-box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1) 0 0 #000;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1) 0 0 #000;
+    padding: 60px 0 50px;
+  }
+  .display-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .register-form-content .signin-area-wrap h4 {
+    font-size: 24px;
+    line-height: 1;
+    color: #131c33;
+    margin-bottom: 30px;
+  }
+  .register-form-content .signin-area-wrap .sign-form input {
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #ecf1f5;
+    border: 1px solid #2f4da1;
+    color: #6a78a1;
+    padding: 9pt 15px;
+    margin-bottom: 15px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .register-form-content .signin-area-wrap .sign-form .btn-reg {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 20px;
+  }
+  .btn-reg {
+    background-color: #3b60c9;
+    color: #fff;
+    display: block;
+    border-radius: 0;
+    font-size: 1pc;
+    line-height: 1;
+    padding: 13px 40px;
+  }
+  .register-form-content .register-form-wrap {
+    margin-top: 0;
+    position: relative;
+  }
+  .register-form-content .register-form-wrap:before {
+    display: block;
+  }
+  .register-form-content .register-form-wrap:before {
+    background-color: #3b60c9;
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -55px;
+  }
+  .register-form-content .register-form-wrap h3 {
+    font-size: 24px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #131c33;
+    margin-bottom: 35px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    font-size: 14px;
+    line-height: 1;
+    color: #000;
+    font-weight: 500;
+  }
+  .form-group .form-control {
+    padding: 10px 15px;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .register-form-content .register-form-wrap .file-input {
+    margin: 20px 0 25px;
+  }
+  .register-form-content .register-form-wrap .file-input .custom-file {
+    background-color: #dbe5f3;
+    font-size: 9pt;
+    line-height: 1;
+    padding: 15px 25px;
+    border: 1px solid #6a78a1;
+    width: auto;
+    cursor: pointer;
+  }
+  .register-form-content .register-form-wrap .file-input .custom-file i.fa {
+    margin-right: 5px;
+  }
+  .register-form-content .register-form-wrap .gender {
+    margin-bottom: 25px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .register-form .form-group .custom-checkbox {
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+  .form-group .custom-checkbox {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+  .form-group .custom-checkbox label {
+    padding-left: 5px;
+    font-size: 9pt;
+    line-height: 1.2;
+    color: #3a3b3c;
+  }

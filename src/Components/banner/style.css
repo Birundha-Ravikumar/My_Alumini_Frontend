@@ -1,0 +1,38 @@
+/* Banner */
+
+#page-title-area {
+    background-image: url('../../CurrentImages/CollegeIamges/B.Arch/B.Arch\ -\ 01.png');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 75pt 0;
+    z-index: 1;
+  }
+  #page-title-area:after {
+    background-color: #000;
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+  }
+  #page-title-area .page-title-content {
+    color: #fff;
+  }
+  #page-title-area .page-title-content h1 {
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  .about {
+    font-size: 50px;
+    font-weight: 700;
+  }
+  #page-title-area .page-title-content .btn-brand {
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    padding: 9pt 55px;
+    margin-top: 15px;
+  }

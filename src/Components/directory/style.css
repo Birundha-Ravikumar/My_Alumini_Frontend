@@ -1,0 +1,279 @@
+.directory-page-content-warp .directory-text-wrap h2 {
+    font-size: 3pc;
+    line-height: 1;
+    font-weight: 100;
+    margin-bottom: 70px;
+    color: #3a3b3c;
+  }
+  .directory-page-content-warp .directory-text-wrap h2 strong {
+    color: #3b60c9;
+  }
+  strong {
+    font-weight: 700;
+  }
+  .directory-page-content-warp .directory-text-wrap .table-search-area form {
+    line-height: 1;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    form
+    input {
+    display: inline-block;
+    margin: 0;
+    border: 1px solid #3b60c9;
+    padding: 15px 20px 1pc;
+    color: #3a3b3c;
+  }
+  .directory-page-content-warp .directory-text-wrap .table-search-area input {
+    vertical-align: middle;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    form
+    .nice-select {
+    height: 52px;
+    line-height: 52px;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    form
+    .nice-select {
+    padding: 0;
+    height: 52px;
+    line-height: 50px;
+    width: 95px;
+    text-align: center !important;
+    float: none;
+    margin-left: -4px;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    .nice-select {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .nice-select {
+    border-color: #3b60c9;
+    border-radius: 0;
+    background-color: #3b60c9;
+    color: #fff;
+  }
+  .nice-select .current {
+    margin-right: 9pt;
+  }
+  .nice-select:after {
+    border-color: #fff;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    form
+    .nice-select
+    .list {
+    right: 0;
+    left: auto;
+  }
+  .nice-select .list {
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .nice-select .list li {
+    width: 100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .nice-select .current {
+    margin-right: 9pt;
+  }
+  .nice-select:after {
+    border-color: #fff;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    form
+    .btn-brand {
+    padding: 17px 30px;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    .btn-brand {
+    padding: 17px 30px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    margin-left: 10px;
+  }
+  .directory-page-content-warp .directory-text-wrap .table-search-area button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .directory-table {
+    margin-top: 50px;
+  }
+  .directory-table .table thead {
+    background-color: #3b60c9;
+    color: #fff;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .directory-table
+    th:first-child {
+    width: auto;
+  }
+  .directory-page-content-warp .directory-text-wrap .directory-table th {
+    font-size: 20px;
+    white-space: nowrap;
+    background-color: #3b60c9;
+    color: #fff;
+  }
+  .directory-table .table thead th {
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .directory-table
+    td:first-child {
+    width: 35%;
+  }
+  .directory-table .table tbody tr td:first-child {
+    width: 35%;
+    text-align: left;
+  }
+  .directory-page-content-warp .directory-text-wrap .directory-table td {
+    font-size: 18px;
+    white-space: normal;
+  }
+  .directory-table .table tbody tr td {
+    background-color: #ecf1f5;
+    color: #3a3b3c;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    vertical-align: middle;
+    padding: 17px 10px;
+  }
+  .directory-page-content-warp .directory-text-wrap .directory-table td img {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+  .directory-table .table tbody tr td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-right: 10px;
+    border: 2px solid #5481ff;
+  }
+  .directory-table .table tbody tr td:nth-child(2n) {
+    background-color: #fff;
+  }
+  .directory-page-content-warp .directory-text-wrap .show-memeber {
+    color: #131c33;
+    margin-top: 8px;
+  }
+  .directory-page-content-warp .directory-text-wrap .show-memeber span {
+    color: #3b60c9;
+  }
+  .nice-select,
+  .nice-select:active,
+  .nice-select:focus,
+  .nice-select:hover {
+    border-color: #3b60c9;
+  }
+  .nice-select .list li.selected:hover,
+  .nice-select .list li:hover {
+    background-color: #3b60c9;
+    color: #fff;
+  }
+  .nice-select .list li {
+    width: 100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .directory-page-content-warp
+    .directory-text-wrap
+    .table-search-area
+    .btn-brand:hover {
+    background-color: #161f37;
+    color: #fff;
+  }
+  .nice-select:after {
+    border-color: #fff;
+  }
+  .nice-select:after {
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: "";
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 9pt;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    width: 5px;
+  }
+  .nice-select.open:after {
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  .nice-select .option.focus,
+  .nice-select .option.selected.focus,
+  .nice-select .option:hover {
+    background-color: #f6f6f6;
+  }
+  .nice-select .option.selected {
+    font-weight: 700;
+  }
+  .nice-select .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: 0;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .select-option{
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 95px;
+    text-align: center;
+    float: none;
+    margin-left: -2px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 0;
+    background-color: #3b60c9;
+    color: #fff;
+    border-color: #3b60c9;
+    padding-left: 10px;
+  }
+  select, option{
+    color: #131c33;
+  }
