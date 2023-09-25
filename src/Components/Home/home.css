@@ -17,7 +17,7 @@
     padding: 155px 0 20pc;
   }
   #slider-area .slide-bg-1 {
-    background-image: url("../../CurrentImages//CollegeIamges/Admin/Admin\ -\ AJBlock.jpg");
+    background-image: url("../../CurrentImages//CollegeIamges/Admin/Admin_AJBlock.jpg");
   }
   #slider-area .single-slide-wrap {
     background-color: #000;
@@ -103,7 +103,7 @@
     padding: 155px 0 20pc;
   }
   #slider-area .slide-bg-2 {
-    background-image: url("../../CurrentImages/CollegeIamges/Admin/Admin\ -\ Entrance.jpg");
+    background-image: url("../../CurrentImages/CollegeIamges/Admin/Admin_Entrance.jpg");
   }
   #slider-area .single-slide-wrap {
     background-color: #000;
@@ -122,7 +122,7 @@
     padding: 155px 0 20pc;
   }
   #slider-area .slide-bg-3 {
-    background-image: url("../../CurrentImages/CollegeIamges/Admin/Admin\ -\ MCC.jpg");
+    background-image: url("../../CurrentImages/CollegeIamges/Admin/Admin_MCC.jpg");
   }
   a,
   button {
@@ -435,7 +435,7 @@
     display: block;
   }
   #about-area .about-area-wrapper:before {
-    background-image: url("../../CurrentImages//CollegeIamges/B.Arch/B.Arch\ -\ 01.png");
+    background-image: url("../../CurrentImages/CollegeIamges/B.Arch/B.Arch_01.png");
     background-size: cover;
     content: "";
     position: absolute;
