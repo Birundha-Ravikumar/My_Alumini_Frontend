@@ -10,7 +10,7 @@ import ScholershipArea from "./ScholershipArea";
 import BlogArea from "./BlogArea";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
-import '../Home/style.css';
+import '../Home/home.css';
 
 const Home = () => {
   return (

@@ -5,7 +5,7 @@ import GalleryContent from "./GalleryContent";
 import GalleryImages from "./GalleryImages";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
-import '../Gallery/style.css';
+import '../Gallery/gallery.css';
 
 
 const Gallery = () => {

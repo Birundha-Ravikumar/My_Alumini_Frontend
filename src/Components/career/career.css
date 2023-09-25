@@ -85,3 +85,26 @@
   .single-job-opportunity .job-opportunity-text .job-oppor-logo {
     height: 5pc;
   }
+
+  .btn.btn-framed.btn-color-grey {
+    border-color: #c5c5c5;
+    color: #252525;
+}
+.btn.btn-small {
+  font-size: 12px;
+  min-height: 30px;
+  padding: 5px 10px;
+}
+.job-opportunity-text p{
+  -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+h5{
+  font-size: 25px;
+}
+
+

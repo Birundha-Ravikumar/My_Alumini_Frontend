@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../banner/Banner";
 import { Accordion, Carousel, CarouselItem } from "react-bootstrap";
-import '../singleEvent/style.css';
+import "../singleEvent/singleEvent.css";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
+import { useLocation } from "react-router-dom";
 
 const SingleEvent = () => {
-  const countDownDate = new Date("2024/9/10").getTime();
-
+  const location = useLocation();
+  console.log("location", location.state?.data?.title);
+  const countDownDate = new Date(location.state.data.eventDate).getTime();
   const [countDown, setCountDown] = useState({
     days: 0,
     hours: 0,
@@ -34,6 +36,7 @@ const SingleEvent = () => {
 
     return () => clearInterval(interval);
   }, []);
+  
   return (
     <>
       <HeaderPage />
@@ -54,13 +57,9 @@ const SingleEvent = () => {
                       <Carousel.Item>
                         <div className="event-thumb-item event-thumb-img-1">
                           <div className="event-meta">
-                            <h3>
-                              Recentl we are going to arrange a awesome get
-                              together!
-                            </h3>
+                            <h3>{location.state.data.title}</h3>
                             <a className="event-address" href="#">
-                              <i className="fa fa-map-marker"></i> Sayidan
-                              Street, Gondomanan, 8993, San Francisco, CA
+                              <i className="fa fa-map-marker"></i>{location.state.data.venue}
                             </a>
                             <a href="/" className="btn btn-brand btn-join">
                               Join
@@ -71,10 +70,7 @@ const SingleEvent = () => {
                       <CarouselItem>
                         <div className="event-thumb-item event-thumb-img-2">
                           <div className="event-meta">
-                            <h3>
-                              Recently we are going to arrange a awesome get
-                              together!
-                            </h3>
+                            <h3>{location.state.data.title}</h3>
                             <a className="event-address" href="#">
                               <i className="fa fa-map-marker"></i> Sayidan
                               Street, Gondomanan, 8993, San Francisco, CA
@@ -256,7 +252,7 @@ const SingleEvent = () => {
           </div>
         </div>
       </section>
-      <FooterPage/>
+      <FooterPage />
     </>
   );
 };

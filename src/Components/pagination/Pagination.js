@@ -1,5 +1,5 @@
 import React from "react";
-import '../pagination/style.css';
+import '../pagination/pagination.css';
 
 const Pagination = () => {
   return (
@@ -52,3 +52,63 @@ const Pagination = () => {
 };
 
 export default Pagination;
+
+// import React, { useState, useEffect } from "react";
+// import ReactPaginate from "react-paginate";
+// import axios from "axios";
+
+// const Pagination = ({ apiEndpoint, itemsPerPage, renderData }) => {
+//   const [data, setData] = useState([]);
+//   const [currentPage, setCurrentPage] = useState(0);
+//   const [totalPages, setTotalPages] = useState(0);
+
+//   const fetchData = async () => {
+//     try {
+//       const response = await axios.get(apiEndpoint);
+//       setData(response.data.data);
+//       setTotalPages(Math.ceil(response.data.length / itemsPerPage));
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchData();
+//   }, [apiEndpoint, itemsPerPage]);
+
+//   const startIndex = currentPage * itemsPerPage;
+//   const endIndex = startIndex + itemsPerPage;
+//   const subset = data.slice(startIndex, endIndex);
+
+//   const handlePageChange = (selectedPage) => {
+//     setCurrentPage(selectedPage.selected);
+//   };
+
+//   return (
+//     <div>
+//       {renderData(subset)}
+//       <ReactPaginate
+//         previousLabel={"previous"}
+//         nextLabel={"next"}
+//         breakLabel={"..."}
+//         pageCount={totalPages}
+//         forcePage={currentPage}
+//         marginPagesDisplayed={2}
+//         pageRangeDisplayed={3}
+//         onPageChange={handlePageChange}
+//         containerClassName={"pagination justify-content-center"}
+//         pageClassName={"page-item"}
+//         pageLinkClassName={"page-link"}
+//         previousClassName={"page-item"}
+//         previousLinkClassName={"page-link"}
+//         nextClassName={"page-item"}
+//         nextLinkClassName={"page-link"}
+//         breakClassName={"page-item"}
+//         breakLinkClassName={"page-link"}
+//         activeClassName={"active"}
+//       />
+//     </div>
+//   );
+// };
+
+// export default Pagination;

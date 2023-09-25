@@ -70,6 +70,7 @@ import Lab2 from '../CurrentImages/CollegeIamges/Lab/BME - Human Physiology Lab.
 import MCA_iOSLab from '../CurrentImages/CollegeIamges/MCA/MCA - iOS Lab.jpg';
 import ECE1 from '../CurrentImages/CollegeIamges/ECE/ECE - Texas Instruments Innovation Centre.jpg';
 import ECE2 from '../CurrentImages/CollegeIamges/ECE/ECE Block.jpg';
+import Register from '../CurrentImages/Gallery/Register.jpg';
 
 const images ={
     about1,about2,about3,
@@ -82,7 +83,7 @@ const images ={
     gallery1,gallery3,gallery4,gallery5,gallery6,gallery8,zoom,member,
     misc,res1,res2,res3,res4,
     slider1,slider2,mepgallery1,mepgallery2,mepgallery3,mepgallery4,mepgallery5,logo,
-    sports1,sports2,MBA_AmbiTheatre,MBA_Block,MBA_CompLab,MBA_Library,BArch1,BArch2,BArch3,BArch4,Lab2, MCA_iOSLab,
+    sports1,sports2,MBA_AmbiTheatre,MBA_Block,MBA_CompLab,MBA_Library,BArch1,BArch2,BArch3,BArch4,Lab2, MCA_iOSLab,Register,
     ECE1,ECE2
 };
 export default images;

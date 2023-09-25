@@ -1,5 +1,5 @@
 import React from "react";
-import '../contact/style.css';
+import '../contact/contact.css';
 import Banner from "../banner/Banner";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";

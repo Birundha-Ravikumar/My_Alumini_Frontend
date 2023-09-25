@@ -127,7 +127,7 @@ const AdminData = () => {
 
   return (
     <>
-      <div className="container ">
+      <div className="container">
         <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">
           <div className="row ">
             <div className="col-sm-3 mt-5 mb-4 text-gred">
@@ -175,7 +175,7 @@ const AdminData = () => {
                   </tr>
                 </thead>
                 <tbody style={{ textAlign: "center" }}>
-                  {records.map((d, index) => (
+                  {paginatedPost.map((d, index) => (
                     <tr key={index}>
                       <td>{d.Id}</td>
                       <td>{d.rollNumber}</td>

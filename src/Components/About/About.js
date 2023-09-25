@@ -6,7 +6,7 @@ import CommitteeArea from "./CommitteeArea";
 import AboutUs from "./AboutUs";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
-import '../About/style.css';
+import '../About/about.css';
 
 const About = () => {
   return (

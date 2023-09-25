@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import "../header/style.css";
+import "../header/header.css";
 import logo from "../../../../../CurrentImages/Logo/logo1.jpeg";
 
 const HeaderPage = () => {
@@ -153,13 +153,6 @@ const HeaderPage = () => {
                   >
                     Login
                   </a>
-                  {/* <a
-                    title="Register"
-                    className="btn-auth btn-auth-sign"
-                    href="/register"
-                  >
-                    Signup
-                  </a> */}
                 </div>
               </div>
             </div>

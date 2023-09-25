@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../event/style.css";
+import "../event/event.css";
+import { Link } from "react-router-dom";
 
-const EventCount = ({ image }) => {
-  const countDownDate = new Date("2024/9/10").getTime();
 
+const EventCount = ({ image, data }) => {
+  const countDownDate = new Date(data.eventDate).getTime();
   const [countDown, setCountDown] = useState({
     days: 0,
     hours: 0,
@@ -31,71 +32,70 @@ const EventCount = ({ image }) => {
     return () => clearInterval(interval);
   }, []);
 
+
   return (
     <>
-      <div className="single-upcoming-event">
-        <div className="row">
-          <div className="col-lg-5">
-            <div className="up-event-thumb">
-              <img src={image} className="img-fluid" alt="Upcoming Event" />
-              <h4 className="up-event-date">It’s 27 February 2023</h4>
-            </div>
-          </div>
-          <div className="col-lg-7">
-            <div className="display-table">
-              <div className="display-table-cell">
-                <div className="up-event-text">
-                  <div className="event-countdown">
-                    <div
-                      className="event-countdown-counter"
-                      data-date="2024/9/10"
-                    >
-                      <div className="counter-item">
-                        <span className="counter-label">Days</span>
-                        <span className="single-count">{countDown.days}</span>
+          <div className="single-upcoming-event">
+            <div className="row">
+              <div className="col-lg-5">
+                <div className="up-event-thumb">
+                  <img src={image} className="img-fluid" alt="Upcoming Event" />
+                  <h4 className="up-event-date">It’s {data.eventDate}</h4>
+                </div>
+              </div>
+              <div className="col-lg-7">
+                <div className="display-table">
+                  <div className="display-table-cell">
+                    <div className="up-event-text">
+                      <div className="event-countdown">
+                        <div
+                          className="event-countdown-counter"
+                          data-date="2024/9/10"
+                        >
+                          <div className="counter-item">
+                            <span className="counter-label">Days</span>
+                            <span className="single-count">
+                              {countDown.days}
+                            </span>
+                          </div>
+                          <div className="counter-item">
+                            <span className="counter-label">Hr</span>
+                            <span className="single-count">
+                              {countDown.hours}
+                            </span>
+                          </div>
+                          <div className="counter-item">
+                            <span className="counter-label">Min</span>
+                            <span className="single-count">
+                              {countDown.minutes}
+                            </span>
+                          </div>
+                          <div className="counter-item">
+                            <span className="counter-label">Sec</span>
+                            <span className="single-count">
+                              {countDown.seconds}
+                            </span>
+                          </div>
+                        </div>
+                        <p>Remaining</p>
                       </div>
-                      <div className="counter-item">
-                        <span className="counter-label">Hr</span>
-                        <span className="single-count">{countDown.hours}</span>
-                      </div>
-                      <div className="counter-item">
-                        <span className="counter-label">Min</span>
-                        <span className="single-count">
-                          {countDown.minutes}
-                        </span>
-                      </div>
-                      <div className="counter-item">
-                        <span className="counter-label">Sec</span>
-                        <span className="single-count">
-                          {countDown.seconds}
-                        </span>
-                      </div>
+                      <h3>
+                        <a href="/singleEvent">{data.title}</a>
+                      </h3>
+                      <p>{data.description}</p>                      
+                      <Link
+                        to="/singleEvent"
+                        state={{data}}
+                        className="btn btn-brand btn-brand-dark"
+                      >
+                        join with us
+                      </Link>
                     </div>
-                    <p>Remaining</p>
                   </div>
-                  <h3>
-                    <a href="/singleEvent">
-                      We are going to arrange a get together!
-                    </a>
-                  </h3>
-                  <p>
-                    Hello everybody Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim and minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquipv ex ea.
-                  </p>
-                  <a
-                    href="/singleEvent"
-                    className="btn btn-brand btn-brand-dark"
-                  >
-                    join with us
-                  </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </>
   );
 };

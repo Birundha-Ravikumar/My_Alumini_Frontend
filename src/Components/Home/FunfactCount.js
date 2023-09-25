@@ -28,10 +28,10 @@ const FunfactCount = () => {
   return (
     <>
     <section id="funfact-area">
-        <div className="container-fluid">
-          <div className="row text-center">
-            <div className="col-lg-3 col-sm-6">
-              <div className="single-funfact-wrap">
+        <div className="container-fluid class4">
+          <div className="row text-center class1">
+            <div className="col-lg-3 col-sm-6 class2">
+              <div className="single-funfact-wrap ">
                 <div className="funfact-icon">
                   <img src={images.fun_fact1} alt="Funfact" />
                 </div>

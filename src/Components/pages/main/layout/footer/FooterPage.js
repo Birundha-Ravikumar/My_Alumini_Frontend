@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../../../../CurrentImages/Logo/logo1.jpeg'
-import '../footer/style.css';
+import '../footer/footer.css';
 
 const FooterPage = () => {
   return (
@@ -73,16 +73,16 @@ const FooterPage = () => {
                 <div className="widgei-body">
                   <ul className="double-list footer-list clearfix">
                     <li>
-                      <a href="#">Contact Us</a>
+                      <a href="/contact">Contact Us</a>
                     </li>
                     <li>
-                      <a href="#">Alumni</a>
+                      <a href="/directory">Directory</a>
                     </li>
                     <li>
-                      <a href="#">Notice Board</a>
+                      <a href="/career">Jobs</a>
                     </li>
                     <li>
-                      <a href="#">Events</a>
+                      <a href="/event">Events</a>
                     </li>
                   </ul>
                 </div>

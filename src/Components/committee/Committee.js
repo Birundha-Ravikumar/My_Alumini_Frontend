@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "../banner/Banner";
 import images from '../ImageImports.js';
-import '../committee/style.css';
+import '../committee/committee.css';
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
 

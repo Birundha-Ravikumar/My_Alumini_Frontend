@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../banner/Banner";
-import Pagination from "../pagination/Pagination";
 import images from "../ImageImports.js";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
 import axios from "axios";
 import { GET_API } from "../apiservices/endpoints";
 import ReactPaginate from "react-paginate";
-import "../directory/style.css";
+import "../directory/directory.css";
+import { Button, Modal } from "react-bootstrap";
 
 const Directory = () => {
   const [data, setData] = useState([]);
-  const [records, setRecords] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const itemsPerPage = 10;
 
   const NumberCounter = ({ from, to, duration, value }) => {
@@ -41,12 +44,11 @@ const Directory = () => {
       .get(GET_API, {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGUxOTczODk2MGRmYWNkZTY1Mjk0YyIsImlhdCI6MTY5MzkxMjY1OX0.rXXXr75Hd4i7u2uUcCT9TuhyB38LOhKNwWQC05qfc7s",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGUxOTczODk2MGRmYWNkZTY1Mjk0YyIsImlhdCI6MTY5NDA5MDgyNH0.FFkisRzvnr62umWsfkVqoCh1iRyKLnwPUWkPfdbc99c",
         },
       })
       .then((response) => {
         setData(response.data);
-        setRecords(response.data);
         setTotalPages(Math.ceil(response.data.length / itemsPerPage));
       })
       .catch((error) => {
@@ -62,6 +64,20 @@ const Directory = () => {
     setCurrentPage(selectedPage.selected);
   };
 
+  const handleFunc = (data) => {
+    handleShow();
+    setSelectedStudent(data);
+  };
+  console.log(selectedStudent);
+
+  const filteredData = data.filter((alumniData) =>
+    alumniData.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+    setCurrentPage(0);
+  };
 
   return (
     <>
@@ -76,14 +92,23 @@ const Directory = () => {
                   <h2>
                     Now we have{" "}
                     <strong className="funfact-count">
-                      <NumberCounter from={1000} to={21910} duration={1000} />
+                      <NumberCounter
+                        from={1}
+                        to={filteredData.length}
+                        duration={1000}
+                      />
                     </strong>{" "}
-                    member{" "}
+                    students{" "}
                   </h2>
                   <div className="table-search-area">
-                    <form action="index.html">
-                      <input type="search" placeholder="Type Your Keyword" />
-                      <select name="dept" className="select-option">
+                    <form action="">
+                      <input
+                        type="search"
+                        placeholder="Search the Name"
+                        value={searchQuery}
+                        onChange={handleSearchInputChange}
+                      />
+                      {/* <select name="dept" className="select-option">
                         <option selected>Dept</option>
                         <option value="cmt">Civil Engineering</option>
                         <option value="cmt">
@@ -103,7 +128,7 @@ const Directory = () => {
                         </option>
                         <option value="cmt">Bio-Medical Engineering</option>
                       </select>
-                      <button className="btn btn-brand">Search</button>
+                      <button className="btn btn-brand">Search</button> */}
                     </form>
                   </div>
                   <div className="directory-table table-responsive">
@@ -119,24 +144,125 @@ const Directory = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {subset.map((d, index) => (
-                          <tr key={index}>
-                            <td>
-                              <img src={images.testi1} alt="table" />
-                              {d.name}
-                            </td>
-                            <td>{d.degree}</td>
-                            <td>{d.department}</td>
-                            <td>{d.startingYear}</td>
-                            <td>{d.endingYear}</td>
-                            <td><button className="btn btn-default">Get Details</button></td>
-                          </tr>
-                        ))}
+                        {filteredData
+                          .slice(startIndex, endIndex)
+                          .map((alumniData, index) => (
+                            <tr key={index}>
+                              <td>
+                                <img src={images.testi1} alt="table" />
+                                {alumniData.name}
+                              </td>
+                              <td>{alumniData.degree}</td>
+                              <td>{alumniData.department}</td>
+                              <td>{alumniData.startingYear}</td>
+                              <td>{alumniData.endingYear}</td>
+
+                              <td>
+                                <Button
+                                  variant="primary"
+                                  onClick={() => handleFunc(alumniData)}
+                                >
+                                  Get Details
+                                </Button>
+                              </td>
+                            </tr>
+                          ))}
+
+                        <div className="model_box">
+                          <Modal
+                            show={show}
+                            onHide={handleClose}
+                            backdrop="static"
+                            keyboard={false}
+                          >
+                            <Modal.Header>
+                              <div style={{ width: "100%", display: "flex" }}>
+                                <img
+                                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.webp"
+                                  alt="Profile pic"
+                                  class="rounded-circle img-responsive text-center mb-1"
+                                  style={{
+                                    borderRadius: "50%!important",
+                                    aspectRatio: "1/1",
+                                    width: "150px",
+                                    margin: "auto",
+                                  }}
+                                />
+                              </div>
+                            </Modal.Header>
+                            <Modal.Body>
+                              {selectedStudent && (
+                                <>
+                                  <div class="modal-body text-center mb-1">
+                                    <h3 class="mt-1 mb-2">
+                                      {selectedStudent.name}
+                                    </h3>
+                                  </div>
+                                  <div className="">
+                                    <table className="table table-bordered">
+                                      <tbody>
+                                        <tr>
+                                          <th width="40%">Id</th>
+                                          <td>{selectedStudent.Id}</td>
+                                        </tr>
+                                        <tr>
+                                          <th width="30%">RollNumber</th>
+                                          <td>{selectedStudent.rollNumber}</td>
+                                        </tr>
+                                        <tr>
+                                          <th width="30%">RegisterNumber</th>
+                                          <td>
+                                            {selectedStudent.registerNumber}
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <th width="30%">StartingYear</th>
+                                          <td>
+                                            {selectedStudent.startingYear}
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <th width="30%">EndingYear</th>
+                                          <td>{selectedStudent.endingYear}</td>
+                                        </tr>
+                                        <tr>
+                                          <th width="30%">Email</th>
+                                          <td>{selectedStudent.email}</td>
+                                        </tr>
+                                        <tr>
+                                          <th width="30%">Mobile No</th>
+                                          <td>
+                                            {selectedStudent.mobileNumber}
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <th width="30%">Degree</th>
+                                          <td>{selectedStudent.degree}</td>
+                                        </tr>
+                                        <tr>
+                                          <th width="50%">Department</th>
+                                          <td>{selectedStudent.department}</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </>
+                              )}
+                            </Modal.Body>
+
+                            <Modal.Footer>
+                              <Button variant="secondary" onClick={handleClose}>
+                                Close
+                              </Button>
+                            </Modal.Footer>
+                          </Modal>
+                        </div>
                       </tbody>
                     </table>
                   </div>
                   <p className="show-memeber text-end">
-                    Show <span>10</span> of <span>12487 Member</span>
+                    Show <span>{itemsPerPage}</span> of{" "}
+                    <span>{filteredData.length} Members</span>
                   </p>
                 </div>
               </div>
@@ -161,7 +287,6 @@ const Directory = () => {
               breakLinkClassName={"page-link"}
               activeClassName={"active"}
             />
-            {/* <Pagination /> */}
           </div>
         </div>
       </section>

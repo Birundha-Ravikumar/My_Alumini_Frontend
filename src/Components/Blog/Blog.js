@@ -6,7 +6,7 @@ import SingleBlog from "./SingleBlog";
 import Pagination from "../pagination/Pagination";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
-import '../Blog/style.css';
+import '../Blog/blog.css';
 
 const Blog = () => {
   return (

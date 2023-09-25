@@ -1,6 +1,7 @@
 import React from "react";
+import '../career/career.css';
 
-const CareerJob = ({ Joblogo, btnName }) => {
+const CareerJob = ({ Joblogo, data }) => {
   return (
     <>
       <div className="col-lg-4 col-sm-6 text-center">
@@ -13,18 +14,22 @@ const CareerJob = ({ Joblogo, btnName }) => {
                 </div>
               </div>
             </div>
-            <h3>
-              <a href="#">Urgently Need Five Data Center Specialist</a>
-            </h3>
+            <h3 style={{color:"#3b60c9", fontSize:"22px"}}>{data.title}</h3>
+            <h5 style={{fontSize:"20px"}}>{data.position}</h5>
             <p>
-              Claritas est etiam procsus dymicus, qui sequitur mutationem
-              Claritas est etiam procsus est etiam procsus dymicus.
-              <a href="#">[...]</a>
+              {data.discription}
             </p>
           </div>
-          <a href="#" className="btn btn-job">
-            {btnName}
-          </a>
+          <div>
+            <div>
+          <button type="button" className="btn btn-framed btn-color-grey btn-small">
+          <i class="fa-solid fa-envelope"></i>  {data.email}</button><br></br>
+          <button type="button" className="btn btn-framed btn-color-grey btn-small">
+          <i class="fa-solid fa-phone"></i>  {data.contactNumber}</button><br></br>
+          <button type="button" className="btn btn-framed btn-color-grey btn-small">
+          <i class="fa-brands fa-edge"></i>  {data.website}</button><br></br>
+          </div>
+          </div>
         </div>
       </div>
     </>
