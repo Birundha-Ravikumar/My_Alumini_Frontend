@@ -3,7 +3,6 @@ import Banner from "../banner/Banner";
 import "../register/register.css";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
-import { Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { GET_API, LOGIN_API } from "../../../utils/endpoints";
 import axios from "axios";
@@ -412,94 +411,6 @@ const Register = () => {
                                       <label for="register_deptno">
                                         Department
                                       </label>
-
-                                      {/* <Dropdown>
-                                        <Dropdown.Toggle
-                                          variant="none"
-                                          split
-                                          id="dropdown-basic"
-                                          className="Select-option" style={{display:"flex", alignItems:"center",justifyContent:"space-between"}}
-                                        >
-                                          select department
-                                        </Dropdown.Toggle>
-
-                                        <Dropdown.Menu
-                                          className="Select-option"
-                                          style={{
-                                            height: "100px",
-                                            overflow: "scroll",
-                                          }}
-                                        >
-                                          <Dropdown.Item href="#/action-1">
-                                            Action
-                                          </Dropdown.Item>
-                                          <Dropdown.Item href="#/action-2">
-                                            Another action
-                                          </Dropdown.Item>
-                                          <Dropdown.Item href="#/action-3">
-                                            Something else
-                                          </Dropdown.Item>
-                                          <Dropdown.Item href="#/action-4">
-                                            Something else
-                                          </Dropdown.Item>
-                                          <Dropdown.Item href="#/action-5">
-                                            Something else
-                                          </Dropdown.Item>
-                                          <Dropdown.Item href="#/action-6">
-                                            Something else
-                                          </Dropdown.Item>
-                                          <Dropdown.Item href="#/action-7">
-                                            Something else
-                                          </Dropdown.Item>
-                                        </Dropdown.Menu>
-                                      </Dropdown> */}
-
-                                      {/* <div className="custom-select">
-                                        <select  className="Select-option" type="dropdown" >
-                                        <option>Civil Engineering</option>
-                                        <option>Electrical and Electronics Engineering</option>
-                                        <option>Electronics and Communication Engineering</option>
-                                        <option>Computer Science and Engineering</option>
-                                        <option>Mechanical Engineering</option>
-                                        <option>Information Technology</option>
-                                        <option>Bio Technology</option>
-                                        <option>Bio Medical Engineering</option>
-                                        <option>Artificial Intelligence and Data Science</option>
-                                        <option>Architecture</option>
-                                        <option>Structural Engineering</option>
-                                        <option>Power Electronics and Drives</option>
-                                        <option>Communication Systems</option>
-                                        <option>Master of Business Administration</option>
-                                        <option >Civil Engineering</option>
-                                        <option>Electrical and Electronics Engineering</option>
-                                        <option>Electronics and Communication Engineering</option>
-                                        <option>Computer Science and Engineering</option>
-                                        <option>Mechanical Engineering</option>
-                                        <option>Information Technology</option>
-                                        <option>Bio Technology</option>
-                                        <option>Bio Medical Engineering</option>
-                                        <option>Artificial Intelligence and Data Science</option>
-                                        <option>Architecture</option>
-                                        <option>Structural Engineering</option>
-                                        <option>Power Electronics and Drives</option>
-                                        <option>Communication Systems</option>
-                                        <option>Master of Business Administration</option>
-                                        <option >Civil Engineering</option>
-                                        <option>Electrical and Electronics Engineering</option>
-                                        <option>Electronics and Communication Engineering</option>
-                                        <option>Computer Science and Engineering</option>
-                                        <option>Mechanical Engineering</option>
-                                        <option>Information Technology</option>
-                                        <option>Bio Technology</option>
-                                        <option>Bio Medical Engineering</option>
-                                        <option>Artificial Intelligence and Data Science</option>
-                                        <option>Architecture</option>
-                                        <option>Structural Engineering</option>
-                                        <option>Power Electronics and Drives</option>
-                                        <option>Communication Systems</option>
-                                        <option>Master of Business Administration</option>
-                                      </select>
-                                      </div> */}
 
                                       <input
                                         type="text"

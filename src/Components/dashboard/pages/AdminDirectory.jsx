@@ -5,6 +5,7 @@ import { formHeaders } from "../../../../utils/FormHeader";
 import { GET_API, GET_FULLUSER_API } from "../../../../utils/endpoints";
 import ReactPaginate from "react-paginate";
 import { StudentSchema } from "../../../validation/StudentValidation";
+import { PacmanLoader } from "react-spinners";
 
 const AdminDirectory = () => {
   const [data, setData] = useState([]);
@@ -19,6 +20,7 @@ const AdminDirectory = () => {
   const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 20;
   const [validationErrors, setValidationErrors] = useState({});
+  const [loading,setLoading] = useState(true);
 
   const options = ["BE", "B.Tech", "B.Arch", "ME", "M.Tech", "MBA"];
   const departments = [
@@ -40,12 +42,15 @@ const AdminDirectory = () => {
   ];
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const response = await axios.get(GET_FULLUSER_API, formHeaders());
       setData(response.data);
       setTotalPages(Math.ceil(response.data.length / itemsPerPage));
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally{
+      setLoading(false);
     }
   };
 
@@ -143,8 +148,19 @@ const AdminDirectory = () => {
   return (
     <>
       <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">
-        <h3 style={{ textAlign: "center" }}>Directory Management</h3>
-        <div className="search-box">
+        <h3 style={{ textAlign: "center" }}>Directory Management</h3> 
+        {
+          loading ? (
+            <div className="text-center position-absolute d-flex justify-content-center align-items-center" style={{height: "70vh", width: "80vw"}}>
+            <PacmanLoader
+             size={30}
+             color={"#a571a7"} 
+             loading={loading}
+             />
+          </div>
+          ) : (
+            <>
+            <div className="search-box">
           <Button variant="success" onClick={() => handleShowModal("create")}>
             Add Alumni
           </Button>
@@ -474,7 +490,10 @@ const AdminDirectory = () => {
           breakClassName={"page-item"}
           breakLinkClassName={"page-link"}
           activeClassName={"active"}
-        />
+        />  </>
+          )
+        }
+        
       </div>
     </>
   );

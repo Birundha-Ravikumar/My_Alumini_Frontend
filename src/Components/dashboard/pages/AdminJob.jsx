@@ -5,6 +5,7 @@ import { formHeaders } from "../../../../utils/FormHeader";
 import { JOB_GET_API, JOB_POST_API } from "../../../../utils/endpoints";
 import ReactPaginate from "react-paginate";
 import { JobSchema } from "../../../validation/JobValidation";
+import { PacmanLoader } from "react-spinners";
 
 const AdminJob = () => {
   const [data, setData] = useState([]);
@@ -25,14 +26,18 @@ const AdminJob = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 10;
+  const [loading,setLoading] = useState(true);
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const response = await axios.get(JOB_GET_API, formHeaders());
       setData(response.data.data);
       setTotalPages(Math.ceil(response.data.data.length / itemsPerPage));
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally{
+      setLoading(false);
     }
   };
   const startIndex = currentPage * itemsPerPage;
@@ -133,7 +138,18 @@ const AdminJob = () => {
   return (
     <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">
       <h3 style={{ textAlign: "center" }}>Job Management</h3>
-      <div className="search-box">
+      {
+        loading ? (
+          <div className="text-center position-absolute d-flex justify-content-center align-items-center" style={{height: "70vh", width: "90vw"}}>
+            <PacmanLoader
+             size={30}
+             color={"#a571a7"} 
+             loading={loading}
+             />
+          </div>
+        ) : (
+          <>
+          <div className="search-box">
         <Button variant="success" onClick={() => handleShowModal("create")}>
           Add Job
         </Button>
@@ -348,6 +364,11 @@ const AdminJob = () => {
         breakLinkClassName={"page-link"}
         activeClassName={"active"}
       />
+
+          </>
+        )
+      }
+      
     </div>
   );
 };

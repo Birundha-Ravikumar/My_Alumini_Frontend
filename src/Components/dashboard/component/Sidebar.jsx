@@ -1,11 +1,12 @@
 import React from 'react';
 import {BsCalendarEventFill} from 'react-icons/bs';
-import {RiGalleryFill} from 'react-icons/ri';
+import {RiGalleryFill,RiContactsFill,RiErrorWarningFill} from 'react-icons/ri';
 import {
   FaTh,
   FaCommentAlt,
   FaSuitcase,
   FaSignOutAlt,
+  FaBlog,
 } from 'react-icons/fa';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import Header from './Header';
@@ -38,6 +39,21 @@ const Sidebar = () => {
       path: '/admin/gallery',
       name: 'Gallery',
       icon: <RiGalleryFill />,
+    },
+    {
+      path: '/admin/blog',
+      name: 'Blogs',
+      icon: <FaBlog />,
+    },
+    {
+      path: '/admin/aboutUs',
+      name: 'AboutUs',
+      icon: <RiErrorWarningFill />,
+    },
+    {
+      path: '/admin/contactUs',
+      name: 'ContactUs',
+      icon: <RiContactsFill/>,
     },
     // {
     //   path: '/admin/logout',
@@ -73,7 +89,7 @@ const Sidebar = () => {
           })}
           <div className='menu menu-logout' onClick={handleLogout}>
           <div className="menu-icons"><FaSignOutAlt /></div>
-                <div className="nav-menu">Logout</div></div>
+          <div className="nav-menu">Logout</div></div>
         {/* </div> */}
       </div>
       <main>

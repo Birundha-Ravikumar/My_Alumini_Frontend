@@ -8,7 +8,7 @@ const BlogArea = () => {
         <div className="row">
           <div className="col-lg-12 text-center">
             <div className="section-title">
-              <h2>Recent News</h2>
+              <h2>Recent Blogs</h2>
             </div>
           </div>
         </div>

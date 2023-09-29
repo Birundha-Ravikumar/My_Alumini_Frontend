@@ -20,22 +20,19 @@ const SidebarArea = (props) => {
             <div className="sidebar-body">
               <ul className="brand-unorderlist">
                 <li>
-                  <a href="#">Scholership</a>
+                  <a href="/career">Jobs</a>
                 </li>
                 <li>
-                  <a href="#">Alumni</a>
+                  <a href="/directory">Alumni</a>
                 </li>
                 <li>
-                  <a href="#">Events</a>
+                  <a href="/event">Events</a>
                 </li>
                 <li>
-                  <a href="#">Member</a>
+                  <a href="/register">Member</a>
                 </li>
                 <li>
-                  <a href="#">Tour</a>
-                </li>
-                <li>
-                  <a href="#">Current Student</a>
+                  <a href="/directory">Current Students</a>
                 </li>
               </ul>
             </div>
@@ -50,7 +47,7 @@ const SidebarArea = (props) => {
                 <a className="active" href="#">
                   custom
                 </a>
-                <a href="#">wordpres</a>
+                <a href="#">wordpress</a>
                 <a href="#">Art</a>
                 <a href="#">our team</a>
                 <a href="#">Classic</a>

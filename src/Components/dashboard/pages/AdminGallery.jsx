@@ -6,6 +6,7 @@ import { GALLERY_GET_API, GALLERY_POST_API } from "../../../../utils/endpoints";
 import ReactPaginate from "react-paginate";
 import { GallerySchema } from "../../../validation/GalleryValidation";
 import { object } from "joi";
+import { PacmanLoader } from "react-spinners";
 
 
 const AdminGallery = () => {
@@ -22,14 +23,18 @@ const AdminGallery = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 10;
+  const [loading,setLoading] = useState(true);
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const response = await axios.get(GALLERY_GET_API,formHeaders());
       setData(response.data.data);
       setTotalPages(Math.ceil(response.data.data.length / itemsPerPage));
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally{
+      setLoading(false);
     }
   };
 
@@ -119,7 +124,18 @@ const AdminGallery = () => {
   return (
     <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">
       <h3 style={{textAlign:'center'}}>Gallery Management</h3>
-      <div className="search-box">
+      {
+        loading ? (
+          <div className="text-center position-absolute d-flex justify-content-center align-items-center" style={{height: "70vh", width: "90vw"}}>
+            <PacmanLoader
+             size={30}
+             color={"#a571a7"} 
+             loading={loading}
+             />
+          </div>
+        ) : (
+          <>
+          <div className="search-box">
           <Button variant="success" onClick={() => handleShowModal("create")}>
             Add Gallery
           </Button>
@@ -239,6 +255,10 @@ const AdminGallery = () => {
       breakLinkClassName={"page-link"}
       activeClassName={"active"}
       />
+            </>
+        )
+      }
+      
     </div>
   );
 };

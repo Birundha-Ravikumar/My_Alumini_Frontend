@@ -15,16 +15,19 @@ import Typography from './Components/typography/Typography.jsx';
 import Committee from './Components/committee/Committee.jsx';
 import Career from './Components/career/Career.jsx';
 import SingleEvent from './Components/singleEvent/SingleEvent.jsx';
-import AdminForm from './Components/admin/AdminForm.jsx';
+// import AdminForm from './Components/admin/AdminForm.jsx';
 import About from './Components/About/About';
 import LoginPage from './Components/pages/login/LoginPage';
 import Sidebar from './Components/dashboard/component/Sidebar';
 import Dashboard from './Components/dashboard/pages/Dashboard';
 import AdminJob from './Components/dashboard/pages/AdminJob';
-import Alumnis from './Components/dashboard/pages/Alumnis';
+// import Alumnis from './Components/dashboard/pages/Alumnis';
 import AdminDirectory from './Components/dashboard/pages/AdminDirectory';
 import AdminEvent from './Components/dashboard/pages/AdminEvent';
 import AdminGallery from './Components/dashboard/pages/AdminGallery';
+import AdminBlog from './Components/dashboard/pages/AdminBlog';
+import AboutUs from './Components/dashboard/pages/AboutUs';
+import ContactUs from './Components/dashboard/pages/ContactUs';
 
 const App = () => {
   return (
@@ -47,17 +50,20 @@ const App = () => {
           <Route path="committee" element={<Committee />} />
           <Route path="career" element={<Career />} />
           <Route path="singleEvent" element={<SingleEvent />} />
-          <Route path="team" element={<AdminForm />} />
+          {/* <Route path="team" element={<AdminForm />} /> */}
         </Route>
         <Route path="/admin">
           <Route path="login" element={<LoginPage />} />
             <Route path='' element={<Sidebar/>} >
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="alumnis" element={<Alumnis />} />
+              {/* <Route path="alumnis" element={<Alumnis />} /> */}
               <Route path="job" element={<AdminJob/>} />
               <Route path="directory" element={<AdminDirectory />} />
               <Route path="event" element={<AdminEvent />} />
               <Route path="gallery" element={<AdminGallery />} />
+              <Route path="blog" element={<AdminBlog />} />
+              <Route path="aboutUs" element={<AboutUs />} />
+              <Route path="contactUs" element={<ContactUs />} />
             </Route>
         </Route>
       </Routes>

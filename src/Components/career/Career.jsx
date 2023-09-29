@@ -3,30 +3,42 @@ import Banner from "../banner/Banner";
 import Pagination from "../pagination/Pagination";
 import images from "../../CurrentImages/ImageImports.js";
 import CareerJob from "./CareerJob";
-import '../career/career.css';
+import "../career/career.css";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
 import FooterPage from "../pages/main/layout/footer/FooterPage";
 import axios from "axios";
 import { JOB_GET_API } from "../../../utils/endpoints";
 import { formHeaders } from "../../../utils/FormHeader";
+import ReactPaginate from "react-paginate";
 
 const Career = () => {
-  const [data,setData]=useState([]);
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const itemsPerPage = 6;
 
-  const fetchData = async () =>{
-    try{
-      const response = await axios.get(JOB_GET_API,formHeaders());
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const subset = data.slice(startIndex, endIndex);
+
+  const handlePageChange = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(JOB_GET_API, formHeaders());
       setData(response.data.data);
+      setTotalPages(Math.ceil(response.data.data.length / itemsPerPage));
       console.log(response.data.data);
-    }
-    catch(error){
+    } catch (error) {
       console.error("Error fetching data:", error);
     }
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-  },[])
+  }, []);
 
   return (
     <>
@@ -87,10 +99,37 @@ const Career = () => {
 
               <div className="job-opportunity-wrapper">
                 <div className="row">
-                  {data.map((job) => <CareerJob Joblogo={images.job1} data={job}/>)
-                  }
+                  {subset.map((job) => (
+                    <CareerJob Joblogo={images.job1} data={job} />
+                  ))}
                 </div>
-                <Pagination />
+                <p className="show-memeber text-end">
+                  Show <span>{itemsPerPage}</span> of{" "}
+                  <span>{subset.length} Jobs</span>
+                </p>
+                <ReactPaginate
+                  previousLabel={"previous"}
+                  nextLabel={"next"}
+                  breakLabel={"..."}
+                  pageCount={totalPages}
+                  forcePage={currentPage}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageChange}
+                  containerClassName={
+                    "pagination justify-content-center bg-color-#9e4fa7"
+                  }
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item"}
+                  previousLinkClassName={"page-link"}
+                  nextClassName={"page-item"}
+                  nextLinkClassName={"page-link"}
+                  breakClassName={"page-item"}
+                  breakLinkClassName={"page-link"}
+                  activeClassName={"active"}
+                />
+                {/* <Pagination /> */}
               </div>
             </div>
           </div>

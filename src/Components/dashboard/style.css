@@ -243,6 +243,9 @@ h2{
 .border-left-warning {
   border-left: 0.25rem solid #f6c23e!important;
 }
+.border-left-danger {
+  border-left: 0.25rem solid red!important;
+}
 .show-memeber span {
   color: #3b60c9;
 }

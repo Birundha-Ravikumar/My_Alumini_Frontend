@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../banner/Banner";
 import images from "../../CurrentImages/ImageImports";
-import Pagination from "../pagination/Pagination";
 import EventCount from "./EventCount";
 import "../event/event.css";
 import HeaderPage from "../pages/main/layout/header/HeaderPage";
@@ -15,7 +14,7 @@ const Event = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const itemsPerPage = 2;
+  const itemsPerPage = 3;
 
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -90,7 +89,7 @@ const Event = () => {
             </div>
             <p className="show-memeber text-end">
               Show <span>{itemsPerPage}</span> of{" "}
-              <span>{subset.length} Members</span>
+              <span>{subset.length} Events</span>
             </p>
             <ReactPaginate
               previousLabel={"previous"}
